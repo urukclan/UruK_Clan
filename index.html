@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="UruK Clan is a gaming organization built around friendship, teamwork, and shared victories.">
+  <title>UruK Clan</title>
+
+  <style>
+    :root {
+      --background: #0b1120;
+      --surface: #131d30;
+      --red: #e33445;
+      --white: #f8fafc;
+      --muted: #aab6c9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #263249;
+      background: #0b1120;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 110px 0 100px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top, #26324c 0%, transparent 65%);
+    }
+
+    .eyebrow {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      font-weight: 900;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid #344158;
+      border-radius: 5px;
+      font-weight: 800;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #c92537;
+    }
+
+    section {
+      padding: 76px 0;
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 12px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .section-intro {
+      max-width: 650px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid #263249;
+      border-radius: 8px;
+      padding: 26px;
+    }
+
+    .card .number {
+      color: var(--red);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .recruitment {
+      background: #111a2b;
+      border-top: 1px solid #263249;
+      border-bottom: 1px solid #263249;
+      text-align: center;
+    }
+
+    .recruitment .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 78px 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#">URU<span>K</span> CLAN</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#games">Games</a>
+        <a href="#recruitment">Recruitment</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">A New Gaming Crew</div>
+
+        <h1>UNITED AS ONE.<br><span>STRONGER TOGETHER.</span></h1>
+
+        <p>
+          A gaming organization built around friendship, teamwork,
+          improvement, and shared victories. Everyone starts somewhere.
+          Let's build something together.
+        </p>
+
+        <div class="buttons">
+          <a class="button button-primary" href="#recruitment">
+            JOIN THE CLAN
+          </a>
+          <a class="button" href="#games">EXPLORE OUR GAMES</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-heading">MORE THAN A CLAN.</h2>
+
+        <p class="section-intro">
+          UruK is a community for players who want teammates,
+          shared experiences, and opportunities to improve.
+          Casual or competitive, experienced or still learning:
+          respect and teamwork come first.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="number">01 / TEAMWORK</div>
+            <h3>Play Together</h3>
+            <p>
+              Find teammates, join voice chat, and enjoy the games
+              we love as a group.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">02 / IMPROVEMENT</div>
+            <h3>Grow Together</h3>
+            <p>
+              Learn new skills, share knowledge, and celebrate
+              progress at every level.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">03 / COMMUNITY</div>
+            <h3>Belong Together</h3>
+            <p>
+              Build friendships, support your teammates, and
+              help shape the future of UruK.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="games">
+      <div class="container">
+        <h2 class="section-heading">OUR GAMES.</h2>
+
+        <p class="section-intro">
+          Starting with our favourite team-based shooter and
+          building toward more games as the clan grows.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="number">MAIN GAME</div>
+            <h3>Team Fortress 2</h3>
+            <p>
+              Casual sessions, team play, clips, and potential
+              competitive teams across different formats.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">PLANNED EXPANSION</div>
+            <h3>Counter-Strike 2</h3>
+            <p>
+              A future home for tactical gameplay, competitive
+              ambitions, and fragmovie creation.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">THE FUTURE</div>
+            <h3>More to Come</h3>
+            <p>
+              The community can help shape what UruK plays
+              as it grows.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruitment" class="recruitment">
+      <div class="container">
+        <div class="eyebrow">Your Story Starts Here</div>
+
+        <h2 class="section-heading">READY TO JOIN URUK?</h2>
+
+        <p class="section-intro">
+          We're building our first roster. You don't need to be
+          a professional player. Bring a good attitude, respect
+          your teammates, and let's play.
+        </p>
+
+        <div class="buttons">
+          <!-- Add your real Discord and Steam group URLs here later. -->
+          <a class="button button-primary" href="#about">
+            MEET THE CLAN
+          </a>
+          <a class="button" href="#games">DISCOVER OUR GAMES</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© 2026 UruK Clan</span>
+      <span>We rise from the ruins of Uruk and conquer!</span>
+    </div>
+  </footer>
+</body>
+</html>
